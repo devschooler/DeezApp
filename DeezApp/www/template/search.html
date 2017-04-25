@@ -1,0 +1,69 @@
+
+<ion-view>
+    <ion-content>
+<tr>
+
+<td width="50px" > </td>
+    Attention - la lecture audio n'est pas disponible via navigateur web
+    pour l'essayer vous pouvez cependant essayer cette fonctionnalité de l'application
+    en téléchargeant l'application ionic view et utiliser l'identifiant A5684AA0
+
+    <td width="50% "></td>
+</tr>
+
+        <form ng-submit="music_search.onSearch()">
+            <p class="item"></p>
+
+
+            <label ng-submit="music_search.onSearch()" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text"  placeholder="Gucci Mane " ng-model="music_search.q"  />
+            </label>
+
+            <button type="submit" class="button button-full button-positive">
+                Rechercher
+            </button>
+
+        </form>
+        ©  2017 Wesley Isaac  --   Developpeur Web/ Mobile
+
+
+        <section ng-show="music_search.results.length > 0">
+
+
+            <div class="list">
+                <div class="item" ng-repeat="result in music_search.results">
+
+
+
+                    <div>
+                        <button class="button" ng-click="music_search.playAudio('{{result.preview}}')">Ecoute un extrait de 30 secondes </button>
+                    </div>
+                    <div>
+                        <button class="button" ng-click="music_search.pauseAudio('{{result.preview}}')">mettre l'extrait en pause  </button>
+                    </div>
+
+                    {{ result.artist.name}} <br>
+
+
+
+                    {{ result.album.title}} <br>
+
+-
+
+                    {{ result.title}} <br>
+
+
+                    <img src="  {{ result.album.cover}}"  >
+
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+    </ion-content>
+
+</ion-view>
